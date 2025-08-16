@@ -5,6 +5,7 @@ module Tools
 
     def execute(path:)
       puts "Reading file #{path}..."
+      
       File.read(path)
     rescue => e
       { error: e.message }

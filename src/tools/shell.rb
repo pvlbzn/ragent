@@ -6,7 +6,7 @@ module Tools
     param :command, desc: "The shell command to execute"
 
     def execute(command:)
-      puts "Pending command: #{command}"
+      puts "Execution command #{command}..."
       print "Allow execution? (y/n)"
 
       response = gets.chomp

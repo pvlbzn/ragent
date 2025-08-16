@@ -7,6 +7,7 @@ module Tools
 
     def execute(path: "")
       puts "Listing files at #{path}..."
+      
       Dir.glob(File.join(path, "*")).map {
         |f| File.directory?(f) ? "#{f}/" : f
       }
