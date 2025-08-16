@@ -1,11 +1,18 @@
 require "ruby_llm"
 require_relative "tools/read_file"
 require_relative "tools/list_files"
+require_relative "tools/edit_files"
+require_relative "tools/shell"
 
 class Agent
   def initialize
     @chat = RubyLLM.chat
-    @chat.with_tools(Tools::ReadFile, Tools::ListFiles)
+    @chat.with_tools(
+      Tools::ReadFile, 
+      Tools::ListFiles, 
+      Tools::EditFile,
+      Tools::Shell,
+    )
   end
 
   def run
